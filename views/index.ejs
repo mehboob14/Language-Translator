@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Translator</title>
+</head>
+
+<body>
+
+    <h2>Text Translator</h2>
+    <form action="/translate" method="post">
+        <textarea name="text" id="" placeholder="Enter text" required></textarea>
+        <select name="targetLan" required>
+            <option value="" disabled selected > Select Lanuages</option>
+            <option value="ur">Urdu</option>
+            <option value="en">English</option>
+            <option value="	hmn">hmm</option>
+            <option value="is">iss</option>
+        </select>
+        <button type="submit">Translate</button>
+    </form>
+
+    <% if (translation) {%>
+        <div class="translation">
+            <h3>Translation</h3>
+            <p>
+                <%= translation %>
+            </p>
+        </div>
+
+        <% } %>
+            <% if (error) {%>
+                <p class="error">
+                    <%= error  %>
+                </p>
+                <% } %>
+
+</body>
+
+</html>
